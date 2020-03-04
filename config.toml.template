@@ -1,0 +1,28 @@
+url = "http://sc02.fi.muni.cz/"
+url_api = "http://sc02.fi.muni.cz/api/action/"
+apikey = ''
+ua = 'ckanexample/1.0 (+http://sc02.fi.muni.cz)'
+post_login_url = 'https://www.evmapy.cz/users_login.php'
+request_url = 'https://www.evmapy.cz/muj-ucet?action=stats'
+package = 'elektronabijecky'
+
+filename = 'evmapy_'
+extension = '.csv'
+
+table_head = ['nabíjecí_stanice', 'nabíjení_interval_začátek_datum_a_čas', 'nabíjení_interval_konec_datum_a_čas', 'spotřeba_hodnota', 'spotřeba_jednotka']
+
+resource_iri = 'https://data.zdarns.cz/zdroj/'
+
+[station_dict]
+319 = 'centrální-parkoviště'
+351 = 'stará-radnice'
+
+[socket_dict]
+343 = 'konektor-2-mennekes-22kw'
+344 = 'zasuvka-230v'
+391 = 'stojan-1'
+
+[payload]
+em = ''
+ps = ''
+
