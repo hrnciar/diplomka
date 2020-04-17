@@ -3,14 +3,13 @@
 This script is used for automatic publication of Evmapy datas
 into CKAN
 """
-import os, sys
+import os
 import csv
 import argparse
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import ckanapi
-from time import sleep
 import toml
 
 config = toml.load('config.toml')
@@ -100,7 +99,9 @@ def month_year_iter(start_month, start_year, end_month, end_year):
         for station in config['station_dict']:
             # TODO: fix this ugliness
             # This is wrong design sockets are defined in config and shoudln't be hardcoded here.
-            # I will rework it if there will be some spare time before submission of my thesis, for now it works. Also there probably won't be any new sockets in config so it's basically just ugly.
+            # I will rework it if there will be some spare time before submission of my thesis,
+            # for now it works. Also there probably won't be any new sockets in config so it's
+            # basically just ugly.
             if station == '319':
                 sockets = ['343', '344']
             else: #station 351
@@ -112,7 +113,7 @@ def month_year_iter(start_month, start_year, end_month, end_year):
                 # where each item is one row [[row], [row], [row]...]
                 list_of_rows = clean_data(raw_table)
 
-                counter +=1
+                counter += 1
 
                 # if table is empty, return empty list
                 if list_of_rows == 1:
@@ -124,12 +125,15 @@ def month_year_iter(start_month, start_year, end_month, end_year):
                     yield data, y, m+1, counter
 
 def ckan_post_request(url, action, data, headers, filename):
+    """
+        Wrapper around request call to provide neccessary parameters.
+    """
     r = requests.post(url + action,
-                    data = data,
-                    headers = headers,
-                    files=[('upload', open(filename, 'rb'))]
-                )
+                      data=data,
+                      headers=headers,
+                      files=[('upload', open(filename, 'rb'))])
     return r
+
 parser = argparse.ArgumentParser(description='Import Evmapy data to CKAN')
 
 group = parser.add_mutually_exclusive_group(required=True)
@@ -180,12 +184,12 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             resource_name = '{extension} file'.format(extension=extension)
             print('Creating "{resource_name}" resource'.format(**locals()))
             data = {
-                    'package_id': config['package'],
-                    'name': y,
-                    'format': extension,
-                    'url': 'upload',  # Needed to pass validation
-                }
-            headers={'Authorization': config['apikey']}
+                'package_id': config['package'],
+                'name': y,
+                'format': extension,
+                'url': 'upload',  # Needed to pass validation
+            }
+            headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
             if r.status_code != 200:
                 print('Error while creating resource: {0}'.format(r.content))
@@ -193,8 +197,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
     if args.import_new:
         r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
                           data={'id': config['package']},
-                        headers={'Authorization': config['apikey']},
-                        )
+                          headers={'Authorization': config['apikey']})
         data = r.json()
         resource_id = ''
         for resource in data['result']['resources']:
@@ -208,22 +211,24 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
         if resource_id == '':
             print('Creating "{resource_name}" resource'.format(**locals()))
             data = {
-                    'package_id': config['package'],
-                    'name': y,
-                    'format': extension,
-                    'url': 'upload',  # Needed to pass validation
-                }
-            headers={'Authorization': config['apikey']}
+                'package_id': config['package'],
+                'name': y,
+                'format': extension,
+                'url': 'upload',  # Needed to pass validation
+            }
+            headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
             if r.status_code != 200:
                 print('Error while creating resource: {0}'.format(r.content))
         else:
             print('Updating "{resource_name}" resource'.format(**locals()))
-            data={'id': resource_id,
-                    'package_id': config['package'],
-                    'name': y,
-                    'format': extension,
-                    'url': 'upload',  # Needed to pass validation
-                }
-            headers={'Authorization': config['apikey']}
+            data = {
+                'id': resource_id,
+                'package_id': config['package'],
+                'name': y,
+                'format': extension,
+                'url': 'upload',  # Needed to pass validation
+            }
+            headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
+
