@@ -11,8 +11,11 @@ import requests
 from bs4 import BeautifulSoup
 import ckanapi
 import toml
+import logging
 
 config = toml.load('config.toml')
+
+EXIT_REQUEST_ERROR = 1
 
 def get_data(url, period, station, pump):
     """Scrape data from web"""
@@ -21,14 +24,26 @@ def get_data(url, period, station, pump):
         # Prevention against TooManyAttemptsError.
         # I have run into this problem just once, if server complaints
         # about too many attemps it's better to use `sleep(1)`.
+        # Keeping it here just for documentation purposes, run into this
+        # error only once or twice.
         try:
             request = session.get(
                 url + '&owner=0&period=' +
                 str(period) + '&station=' +
                 str(station) + '&pump=' + str(pump)
             )
-        except requests.exceptions.ConnectionError:
-            request.status_code = "Connection refused"
+        except requests.exceptions.ConnectionError as e:
+            logging.error(e)
+            logging.error('Request for retrieving table data failed. Exiting...')
+            exit(EXIT_REQUEST_ERROR)
+        except requests.exceptions.HTTPError as e:
+            logging.error(e)
+            logging.error('Request for retrieving resource id failed. Exiting...')
+            exit(EXIT_REQUEST_ERROR)
+        except requests.exceptions.RequestException as e:
+            logging.error(e)
+            logging.error('Request for retrieving resource id failed. Exiting...')
+            exit(EXIT_REQUEST_ERROR)
 
         return request
 
@@ -37,8 +52,8 @@ def clean_data(raw_data):
     tree = BeautifulSoup(raw_data.text, "lxml")
     try:
         table = tree.select("table")[1] # Choose second table "Detail"
-    except:
-        print('Skipping - no data table') #TODO: Raise error
+    except Exception:
+        logging.info('Skipping - no data table')
         return 1
     list_of_rows = []
     for row in table.findAll('tr'):
@@ -94,7 +109,7 @@ def month_year_iter(start_month, start_year, end_month, end_year):
             current_date = str(y) + "0" + str(m + 1)
         else:
             current_date = str(y) + str(m + 1)
-        print("Processing: " + current_date)
+        logging.info('Processing %s', current_date)
         counter = 0
         for station in config['station_dict']:
             # TODO: fix this ugliness
@@ -112,6 +127,7 @@ def month_year_iter(start_month, start_year, end_month, end_year):
                 # list_of_rows contains prepared unprocessed data in list,
                 # where each item is one row [[row], [row], [row]...]
                 list_of_rows = clean_data(raw_table)
+                logging.info('Data for %s cleaned', current_date)
 
                 counter += 1
 
@@ -121,6 +137,7 @@ def month_year_iter(start_month, start_year, end_month, end_year):
                 else:
                     # data contains final form of datas, prepared to be written into file
                     data = prepare_data(list_of_rows, station, socket)
+                    logging.info('Data for %s prepared', current_date)
 
                     yield data, y, m+1, counter
 
@@ -128,11 +145,21 @@ def ckan_post_request(url, action, data, headers, filename):
     """
         Wrapper around request call to provide neccessary parameters.
     """
-    r = requests.post(url + action,
-                      data=data,
-                      headers=headers,
-                      files=[('upload', open(filename, 'rb'))])
-    return r
+    try:
+        r = requests.post(url + action,
+                          data=data,
+                          headers=headers,
+                          files=[('upload', open(filename, 'rb'))])
+        r.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        logging.error(e)
+        logging.error('Request for retrieving resource id failed. Exiting...')
+        return EXIT_REQUEST_ERROR
+    except requests.exceptions.RequestException as e:
+        logging.error('Request for retrieving resource id failed. Exiting...')
+        return EXIT_REQUEST_ERROR
+
+    return 0
 
 parser = argparse.ArgumentParser(description='Import Evmapy data to CKAN')
 
@@ -151,19 +178,36 @@ group_head.add_argument('--no-head', action='store_true', help='do not include h
 
 args = parser.parse_args()
 
+logging.basicConfig(filename='evmapy.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
+        logging.error('Given year does not has 4 digits. Exiting...')
+        exit(1)
+
+if (((len(str(args.start_month)) >= 2) and (len(str(args.start_year)) <= 0)) or
+    ((len(str(args.end_month)) >= 2) and (len(str(args.end_year)) <= 0))):
+        logging.error('Given month does not has 2 digits. Exiting...')
+        exit(1)
+
+logging.debug('Arguments parsed.')
 if args.head:
     head_written = False
 if args.no_head:
     head_written = True
 
 for data, y, m, counter in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
-    filename = config['filename'] + str(y) + config['extension']
+    filename = config['filename'] + str(y) + config['extension'] # evmapy_xxxx.csv
 
     if os.path.exists(filename):
         append_write = 'a' # append if already exists
     else:
         append_write = 'w' # make a new file if not
-    outfile = open(filename, append_write, newline='\n', encoding='utf-8')
+    try:
+        outfile = open(filename, append_write, newline='\n', encoding='utf-8')
+    except IOError:
+        logging.error('Could not open file for writing. Exiting...')
+        exit(1)
+    logging.debug('File opened')
     writer = csv.writer(outfile)
     if data != 'Err - empty table':
         if not head_written:
@@ -175,14 +219,15 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             #print(' '.join(data))
         outfile.close()
     if args.import_old:
-        if m == 12 and counter == len(config['socket_dict']):
+        logging.info('Importing old datas')
+        # Ending loop after end_month iterations and all sockets proccessed
+        if m == args.end_month and counter == len(config['socket_dict']):
             head_written = False
-            ckan = ckanapi.RemoteCKAN('http://sc02.fi.muni.cz/', apikey=config['apikey'])
 
             path = os.path.join(filename)
             extension = os.path.splitext(filename)[1][1:].upper()
             resource_name = '{extension} file'.format(extension=extension)
-            print('Creating "{resource_name}" resource'.format(**locals()))
+            logging.info('Creating "{resource_name}" resource'.format(**locals()))
             data = {
                 'package_id': config['package'],
                 'name': y,
@@ -191,13 +236,26 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
-            if r.status_code != 200:
-                print('Error while creating resource: {0}'.format(r.content))
-
+            if r == EXIT_REQUEST_ERROR:
+                # TODO: call rollback() here
+                exit(1)
     if args.import_new:
-        r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
-                          data={'id': config['package']},
-                          headers={'Authorization': config['apikey']})
+        try:
+            # TODO: use ckan_post_request() instead
+            # see: https://stackoverflow.com/a/919720
+            r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
+                              data={'id': config['package']},
+                              headers={'Authorization': config['apikey']})
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            logging.error(e)
+            logging.error('Request for retrieving resource id failed. Exiting...')
+            # TODO: call rollback() here
+            raise SystemExit(e)
+        except requests.exceptions.RequestException as e:
+            logging.error('Request for retrieving resource id failed. Exiting...')
+            # TODO: call rollback() here
+            raise SystemExit(e)
         data = r.json()
         resource_id = ''
         for resource in data['result']['resources']:
@@ -209,7 +267,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
         extension = os.path.splitext(filename)[1][1:].upper()
         resource_name = '{extension} file'.format(extension=extension)
         if resource_id == '':
-            print('Creating "{resource_name}" resource'.format(**locals()))
+            logging.info('Creating "{resource_name}" resource'.format(**locals()))
             data = {
                 'package_id': config['package'],
                 'name': y,
@@ -218,10 +276,11 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
-            if r.status_code != 200:
-                print('Error while creating resource: {0}'.format(r.content))
+            if r == EXIT_REQUEST_ERROR:
+                # TODO: call rollback() here
+                exit(1)
         else:
-            print('Updating "{resource_name}" resource'.format(**locals()))
+            logging.info('Updating "{resource_name}" resource'.format(**locals()))
             data = {
                 'id': resource_id,
                 'package_id': config['package'],
@@ -231,4 +290,9 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
+            if r == EXIT_REQUEST_ERROR:
+                # TODO: call rollback() here
+                exit(1)
+
+    logging.info('All datas successfully imported.')
 
