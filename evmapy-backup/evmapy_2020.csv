@@ -138,7 +138,8 @@ https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-02-13T17
 https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-02-12T13:39:00,2020-02-12T17:32:00,1.416,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-02-06T14:34:00,2020-02-06T14:39:00,0.201,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-02-06T14:28:00,2020-02-06T14:30:00,0.094,kWh
-nabíjecí_stanice,nabíjení_interval_začátek_datum_a_čas,nabíjení_interval_konec_datum_a_čas,spotřeba_hodnota,spotřeba_jednotka
+https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-30T18:24:00,2020-03-30T20:01:00,10.589,kWh
+https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-30T08:13:00,2020-03-30T10:59:00,18.318,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-25T20:36:00,2020-03-25T20:57:00,2.314,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-24T10:17:00,2020-03-24T12:25:00,14.354,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-20T12:49:00,2020-03-20T13:09:00,1.449,kWh
@@ -169,5 +170,6 @@ https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-02T08:50:00,2020-03-02T10:13:00,6.208,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-02T07:18:00,2020-03-02T08:48:00,9.459,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2020-03-01T08:42:00,2020-03-01T11:06:00,26.813,kWh
+https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-03-30T08:19:00,2020-03-30T10:56:00,0.115,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-03-24T10:22:00,2020-03-24T12:21:00,0.114,kWh
 https://data.zdarns.cz/zdroj/centrální-parkoviště/zasuvka-230v,2020-03-23T19:26:00,2020-03-23T21:12:00,3.840,kWh
