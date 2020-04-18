@@ -6,7 +6,7 @@ post_login_url = 'https://www.evmapy.cz/users_login.php'
 request_url = 'https://www.evmapy.cz/muj-ucet?action=stats'
 package = 'elektronabijecky'
 
-filename = 'evmapy_'
+filename = 'elektronabijecky_'
 extension = '.csv'
 
 table_head = ['nabíjecí_stanice', 'nabíjení_interval_začátek_datum_a_čas', 'nabíjení_interval_konec_datum_a_čas', 'spotřeba_hodnota', 'spotřeba_jednotka']

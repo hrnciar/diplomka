@@ -217,7 +217,7 @@ group_head.add_argument('--no-head', action='store_true', help='do not include h
 
 args = parser.parse_args()
 
-logging.basicConfig(filename='evmapy.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='elektronabijecky.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
@@ -246,7 +246,7 @@ for year in range(args.start_year, args.end_year+1):
         logging.info('Removed %s', filename)
 
 for data, y, m, counter in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
-    filename = config['filename'] + str(y) + config['extension'] # evmapy-backup/evmapy_xxxx.csv
+    filename = config['filename'] + str(y) + config['extension'] # backup/elektronabijecky_xxxx.csv
 
     if os.path.exists(filename):
         append_write = 'a' # append if already exists
