@@ -171,7 +171,7 @@ def rollback(start_year, end_year):
 
 parser = argparse.ArgumentParser(description='Import Žďár nad Sázavou temperature datas into CKAN')
 
-group = parser.add_mutually_exclusive_group(required=True)
+group = parser.add_mutually_exclusive_group(required=False)
 group.add_argument('-io', '--import-old', action='store_true', help='one time import of old data')
 group.add_argument('-in', '--import-new', action='store_true', help='import of datas that are not yet complety, eg. first n months of year')
 
@@ -213,7 +213,7 @@ for year in range(args.start_year, args.end_year+1):
     except:
         logging.info('Nothing to backup')
 
-    if args.import_old:
+    if not args.import_new:
         try:
             os.remove(filename)
             logging.info('Removed %s', filename)
@@ -244,83 +244,55 @@ for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_mo
             writer.writerow(row)
             #print(' '.join(data))
         outfile.close()
-    if args.import_old:
-        logging.info('Importing old datas')
 
-        if y != args.end_year:
-            months_in_year = 12
-        else:
-            months_in_year = args.end_month
+    try:
+        # TODO: use ckan_post_request() instead
+        # see: https://stackoverflow.com/a/919720
+        r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
+                          data={'id': config['package']},
+                          headers={'Authorization': config['apikey']})
+        r.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        logging.error(e)
+        logging.error('Request for retrieving resource id failed. Exiting...')
+        exit(rollback(args.start_year, args.end_year))
+    except requests.exceptions.RequestException as e:
+        logging.error('Request for retrieving resource id failed. Exiting...')
+        exit(rollback(args.start_year, args.end_year))
+    data = r.json()
+    resource_id = ''
+    for resource in data['result']['resources']:
+        if resource['name'] == str(y):
+            resource_id = resource['id']
 
-        # Ending loop after end_month iterations and all sockets proccessed
-        if m == months_in_year:
-            head_written = False
-
-            path = os.path.join(filename)
-            extension = os.path.splitext(filename)[1][1:].upper()
-            resource_name = '{extension} file'.format(extension=extension)
-            logging.info('Creating "{resource_name}" resource'.format(**locals()))
-            data = {
-                'package_id': config['package'],
-                'name': y,
-                'format': extension,
-                'url': 'upload',  # Needed to pass validation
-            }
-            headers = {'Authorization': config['apikey']}
-            r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
-            if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
-
-    if args.import_new:
-        try:
-            # TODO: use ckan_post_request() instead
-            # see: https://stackoverflow.com/a/919720
-            r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
-                              data={'id': config['package']},
-                              headers={'Authorization': config['apikey']})
-            r.raise_for_status()
-        except requests.exceptions.HTTPError as e:
-            logging.error(e)
-            logging.error('Request for retrieving resource id failed. Exiting...')
+    path = os.path.join(filename)
+    extension = os.path.splitext(filename)[1][1:].upper()
+    resource_name = '{extension} file'.format(extension=extension)
+    if resource_id == '':
+        logging.info('Creating "{resource_name}" resource'.format(**locals()))
+        data = {
+            'package_id': config['package'],
+            'name': y,
+            'format': extension,
+            'url': 'upload',  # Needed to pass validation
+        }
+        headers = {'Authorization': config['apikey']}
+        r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
+        if r == EXIT_REQUEST_ERROR:
             exit(rollback(args.start_year, args.end_year))
-        except requests.exceptions.RequestException as e:
-            logging.error('Request for retrieving resource id failed. Exiting...')
+    else:
+        logging.info('Updating "{resource_name}" resource'.format(**locals()))
+        data = {
+            'id': resource_id,
+            'package_id': config['package'],
+            'name': y,
+            'format': extension,
+            'url': 'upload',  # Needed to pass validation
+        }
+        headers = {'Authorization': config['apikey']}
+        r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
+        if r == EXIT_REQUEST_ERROR:
             exit(rollback(args.start_year, args.end_year))
-        data = r.json()
-        resource_id = ''
-        for resource in data['result']['resources']:
-            now = datetime.now()
-            if resource['name'] == str(now.year):
-                resource_id = resource['id']
-
-        path = os.path.join(filename)
-        extension = os.path.splitext(filename)[1][1:].upper()
-        resource_name = '{extension} file'.format(extension=extension)
-        if resource_id == '':
-            logging.info('Creating "{resource_name}" resource'.format(**locals()))
-            data = {
-                'package_id': config['package'],
-                'name': y,
-                'format': extension,
-                'url': 'upload',  # Needed to pass validation
-            }
-            headers = {'Authorization': config['apikey']}
-            r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
-            if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
-        else:
-            logging.info('Updating "{resource_name}" resource'.format(**locals()))
-            data = {
-                'id': resource_id,
-                'package_id': config['package'],
-                'name': y,
-                'format': extension,
-                'url': 'upload',  # Needed to pass validation
-            }
-            headers = {'Authorization': config['apikey']}
-            r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
-            if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
 
     logging.info('All datas successfully imported.')
 
