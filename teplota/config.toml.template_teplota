@@ -1,0 +1,15 @@
+url = "http://sc02.fi.muni.cz/"
+url_api = "http://sc02.fi.muni.cz/api/action/"
+apikey = ''
+ua = 'ckanexample/1.0 (+http://sc02.fi.muni.cz)'
+post_login_url = 'https://www.evmapy.cz/users_login.php'
+# P is control string, F is format where T means text(csv) available also X for XML
+request_url = 'https://data.zdarns.cz/temp.asp?P=XXX&F=T'
+package = 'teploty'
+
+filename = 'teploty_'
+extension = '.csv'
+
+table_head = ['budova', 'datum_a_čas měření', 'čidlo 1', 'čidlo 2']
+
+resource_iri = 'https://data.zdarns.cz/zdroj/'
