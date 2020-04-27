@@ -223,8 +223,7 @@ if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
     exit(1)
 
-if (((len(str(args.start_month)) >= 2) and (len(str(args.start_year)) <= 0)) or
-        ((len(str(args.end_month)) >= 2) and (len(str(args.end_year)) <= 0))):
+if ((len(str(args.start_month)) >= 2) or (len(str(args.end_month)) >= 2)):
     logging.error('Given month does not has 2 digits. Exiting...')
     exit(1)
 
