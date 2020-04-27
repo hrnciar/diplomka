@@ -171,10 +171,6 @@ def rollback(start_year, end_year):
 
 parser = argparse.ArgumentParser(description='Import Žďár nad Sázavou temperature datas into CKAN')
 
-group = parser.add_mutually_exclusive_group(required=False)
-group.add_argument('-io', '--import-old', action='store_true', help='one time import of old data')
-group.add_argument('-in', '--import-new', action='store_true', help='import of datas that are not yet complety, eg. first n months of year')
-
 parser.add_argument('-sy','--start-year', action='store', type=int, required='True', help='start year of import')
 parser.add_argument('-sm','--start-month', action='store', type=int, required='True', help='start month of import')
 parser.add_argument('-ey', '--end-year', action='store', type=int, required='True', help='end year of import')
@@ -209,24 +205,19 @@ for year in range(args.start_year, args.end_year+1):
     # Create backup of file being uploaded
     try:
         copyfile(filename, filename + '.old')
-        logging.info('Backing up %s', filename)
+        logging.info('Backing up %s.old', filename)
     except:
         logging.info('Nothing to backup')
-
-    if not args.import_new:
-        try:
-            os.remove(filename)
-            logging.info('Removed %s', filename)
-        except:
-            logging.info('Nothing to remove')
 
 for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
     filename = config['filename'] + str(y) + config['extension'] # backup/elektronabijecky_xxxx.csv
 
     if os.path.exists(filename):
         append_write = 'a' # append if already exists
+        logging.debug('Appending to existing file')
     else:
         append_write = 'w' # make a new file if not
+        logging.debug('Writing to new file')
     try:
         outfile = open(filename, append_write, newline='\n', encoding='utf-8')
     except IOError:
