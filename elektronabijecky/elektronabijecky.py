@@ -169,16 +169,17 @@ def rollback(start_year, end_year):
         logging.error('Rollback of year %s in progress', year)
         filename = config['filename'] + str(year) + config['extension']
 
-        # Remove corrupted files
         try:
+            # Remove corrupted files
             os.remove(filename)
+
+            # Restore backed up files
+            copyfile(filename + '.old', filename)
+
+            # Remove old back ups
+            os.remove(filename + ".old")
         except:
             pass
-        # Restore backed up files
-        copyfile(filename + '.old', filename)
-
-        # Remove old back ups
-        os.remove(filename + ".old")
 
         extension = os.path.splitext(filename)[1][1:].upper()
         logging.info('Creating "{resource_name}" resource'.format(**locals()))
