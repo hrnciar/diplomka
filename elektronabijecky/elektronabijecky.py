@@ -97,7 +97,7 @@ def prepare_data(list_of_rows, station, socket):
         del row[0][0]
         consumption = row[1].split(' ')
         iri = config['resource_iri'] + config['station_dict'][station] + '/' + config['socket_dict'][socket]
-        list_of_rows[index] = [iri] + row[0] + [consumption[0]] + [consumption[1]]
+        list_of_rows[index] = [iri] + row[0] + [consumption[0]] + [consumption[1].upper()]
         index += 1
 
     return list_of_rows
@@ -230,7 +230,7 @@ if ((len(str(args.start_month)) > 2) or (len(str(args.end_month)) > 2) and
     logging.error('Given month does not has 2 digits. Exiting...')
     exit(1)
 
-if ((args.start_year > args.end_year) or (args.start_month > args.end_month)):
+if args.start_year > args.end_year:
     logging.error('Starting month/year has to be smaller that ending month/year. Exiting...')
     exit(1)
 
