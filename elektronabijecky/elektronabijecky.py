@@ -159,13 +159,11 @@ def ckan_post_request(url, action, data, headers, filename):
         r.raise_for_status()
     except requests.exceptions.HTTPError as e:
         logging.error(e)
-        logging.error('Request for action: %s failed. Exiting...', action)
         return EXIT_REQUEST_ERROR
     except requests.exceptions.RequestException as e:
-        logging.error('Request for action: %s failed. Exiting...', action)
         return EXIT_REQUEST_ERROR
 
-    if action == 'package_show':
+    if action in ['package_show', 'package_create']:
         return r
     else:
         return 0
@@ -210,10 +208,6 @@ def rollback(start_year, end_year):
 
 parser = argparse.ArgumentParser(description='Import Evmapy data to CKAN')
 
-group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument('-io', '--import-old', action='store_true', help='one time import of old data')
-group.add_argument('-in', '--import-new', action='store_true', help='import of datas that are not yet complety, eg. first n months of year')
-
 parser.add_argument('-sy','--start-year', action='store', type=int, required='True', help='start year of import')
 parser.add_argument('-sm','--start-month', action='store', type=int, required='True', help='start month of import')
 parser.add_argument('-ey', '--end-year', action='store', type=int, required='True', help='end year of import')
@@ -236,6 +230,10 @@ if ((len(str(args.start_month)) > 2) or (len(str(args.end_month)) > 2) and
     logging.error('Given month does not has 2 digits. Exiting...')
     exit(1)
 
+if ((args.start_year > args.end_year) or (args.start_month > args.end_month)):
+    logging.error('Starting month/year has to be smaller that ending month/year. Exiting...')
+    exit(1)
+
 logging.debug('Arguments parsed.')
 if args.head:
     head_written = False
@@ -245,13 +243,16 @@ if args.no_head:
 for year in range(args.start_year, args.end_year+1):
     filename = config['filename'] + str(year) + config['extension']
 
-    # Create backup of file being uploaded
-    copyfile(filename, filename + '.old')
-    logging.info('Backing up %s', filename)
+    try:
+        # Create backup of file being uploaded
+        copyfile(filename, filename + '.old')
+        logging.info('Backing up %s', filename)
 
-    if args.import_old:
-        os.remove(filename)
-        logging.info('Removed %s', filename)
+        if args.head:
+            os.remove(filename)
+            logging.info('Removed %s', filename)
+    except:
+        pass
 
 for data, y, m, counter in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
     filename = config['filename'] + str(y) + config['extension'] # backup/elektronabijecky_xxxx.csv
@@ -268,14 +269,15 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
     logging.debug('File opened')
     writer = csv.writer(outfile)
 
-    if not head_written:
-        writer.writerow(config['table_head'])
-        head_written = True
-    #print(' '.join(TABLE_HEAD))
-    for row in data:
-        writer.writerow(row)
-        #print(' '.join(data))
-    outfile.close()
+    if data != 'Err - empty table':
+        if not head_written:
+            writer.writerow(config['table_head'])
+            head_written = True
+        #print(' '.join(TABLE_HEAD))
+        for row in data:
+            writer.writerow(row)
+            #print(' '.join(data))
+        outfile.close()
 
     #logging.info('Importing old datas')
 
@@ -288,6 +290,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
     if m == months_in_year and counter == len(config['socket_dict']):
         head_written = False
 
+        # Check if package exists
         try:
             # TODO: use ckan_post_request() instead
             # see: https://stackoverflow.com/a/919720
@@ -310,31 +313,18 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
+            data = r.json()
+
             if r == EXIT_REQUEST_ERROR:
                 logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(y))
                 exit(1)
-        print(data['result']['id'])
-    '''
-    if args.import_new:
-        try:
-            # TODO: use ckan_post_request() instead
-            # see: https://stackoverflow.com/a/919720
-            r = requests.post('http://sc02.fi.muni.cz/api/action/package_show',
-                              data={'id': config['package']},
-                              headers={'Authorization': config['apikey']})
-            r.raise_for_status()
-        except requests.exceptions.HTTPError as e:
-            logging.error(e)
-            logging.error('Request for retrieving resource id failed. Exiting...')
-            exit(rollback(args.start_year, args.end_year))
-        except requests.exceptions.RequestException as e:
-            logging.error('Request for retrieving resource id failed. Exiting...')
-            exit(rollback(args.start_year, args.end_year))
-        data = r.json()
+        # we have id of package that will be updated
+        package_id = data['result']['id']
+
         resource_id = ''
         for resource in data['result']['resources']:
             now = datetime.now()
-            if resource['name'] == str(now.year):
+            if resource['name'] == config['package_name'] + str(now.year):
                 resource_id = resource['id']
 
         path = os.path.join(filename)
@@ -343,8 +333,8 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
         if resource_id == '':
             logging.info('Creating "{resource_name}" resource'.format(**locals()))
             data = {
-                'package_id': config['package'],
-                'name': y,
+                'package_id': package_id,
+                'name': config['package_name'] + str(y),
                 'format': extension,
                 'url': 'upload',  # Needed to pass validation
             }
@@ -356,8 +346,8 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             logging.info('Updating "{resource_name}" resource'.format(**locals()))
             data = {
                 'id': resource_id,
-                'package_id': config['package'],
-                'name': y,
+                'package_id': package_id,
+                'name': config['package_name'] + str(y),
                 'format': extension,
                 'url': 'upload',  # Needed to pass validation
             }
@@ -365,7 +355,6 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
             if r == EXIT_REQUEST_ERROR:
                 exit(rollback(args.start_year, args.end_year))
-    '''
 
     logging.info('All datas successfully imported.')
 
@@ -373,5 +362,8 @@ for year in range(args.start_year, args.end_year+1):
     filename = config['filename'] + str(year) + config['extension']
 
     # Remove old backup, keep new one
-    os.remove(filename + '.old')
-    logging.info('Removing old backups %s', filename)
+    try:
+        os.remove(filename + '.old')
+        logging.info('Removing old backups %s', filename)
+    except:
+        pass
