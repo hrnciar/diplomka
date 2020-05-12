@@ -147,11 +147,15 @@ def ckan_post_request(url, action, data, headers, filename):
     """
         Wrapper around request call to provide neccessary parameters.
     """
+    if filename:
+        files=[('upload', open(filename, 'rb'))]
+    else:
+        files=None
     try:
         r = requests.post(url + action,
                           data=data,
                           headers=headers,
-                          files=[('upload', open(filename, 'rb'))])
+                          files=files)
         r.raise_for_status()
     except requests.exceptions.HTTPError as e:
         logging.error(e)
@@ -161,7 +165,10 @@ def ckan_post_request(url, action, data, headers, filename):
         logging.error('Request for action: %s failed. Exiting...', action)
         return EXIT_REQUEST_ERROR
 
-    return 0
+    if action == 'package_show':
+        return r
+    else:
+        return 0
 
 def rollback(start_year, end_year):
     rollback_error = False
@@ -224,7 +231,8 @@ if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
     exit(1)
 
-if ((len(str(args.start_month)) >= 2) or (len(str(args.end_month)) >= 2)):
+if ((len(str(args.start_month)) > 2) or (len(str(args.end_month)) > 2) and
+    (len(str(args.start_month)) <= 0) or (len(str(args.end_month)) <= 0)):
     logging.error('Given month does not has 2 digits. Exiting...')
     exit(1)
 
@@ -260,42 +268,53 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
     logging.debug('File opened')
     writer = csv.writer(outfile)
 
-    if data != 'Err - empty table':
-        if not head_written:
-            writer.writerow(config['table_head'])
-            head_written = True
-        #print(' '.join(TABLE_HEAD))
-        for row in data:
-            writer.writerow(row)
-            #print(' '.join(data))
-        outfile.close()
-    if args.import_old:
-        logging.info('Importing old datas')
+    if not head_written:
+        writer.writerow(config['table_head'])
+        head_written = True
+    #print(' '.join(TABLE_HEAD))
+    for row in data:
+        writer.writerow(row)
+        #print(' '.join(data))
+    outfile.close()
 
-        if y != args.end_year:
-            months_in_year = 12
-        else:
-            months_in_year = args.end_month
+    #logging.info('Importing old datas')
 
-        # Ending loop after end_month iterations and all sockets proccessed
-        if m == months_in_year and counter == len(config['socket_dict']):
-            head_written = False
+    if y != args.end_year:
+        months_in_year = 12
+    else:
+        months_in_year = args.end_month
 
-            path = os.path.join(filename)
-            extension = os.path.splitext(filename)[1][1:].upper()
-            resource_name = '{extension} file'.format(extension=extension)
-            logging.info('Creating "{resource_name}" resource'.format(**locals()))
+    # Ending loop after end_month iterations and all sockets proccessed
+    if m == months_in_year and counter == len(config['socket_dict']):
+        head_written = False
+
+        try:
+            # TODO: use ckan_post_request() instead
+            # see: https://stackoverflow.com/a/919720
+            data={'id': config['package'] + str(y)}
+            headers={'Authorization': config['apikey']}
+            r = ckan_post_request(config['url_api'], 'package_show', data, headers, None)
+            data = r.json()
+        except:
+            logging.info('Dataset %s does not exists', config['package'] + str(y))
+
+        # dataset does not exists or is deleted, create one
+        if r == EXIT_REQUEST_ERROR or data['result']['state'] == 'deleted':
+            logging.info('Creating dataset %s', config['package'] + str(y))
             data = {
-                'package_id': config['package'],
-                'name': y,
-                'format': extension,
-                'url': 'upload',  # Needed to pass validation
+                'name': config['package'] + str(y),
+                'title': config['package_name'] + str(y),
+                'private': False,
+                'url': 'upload',  # Needed to pass validation,
+                'owner_org': 'elektronabijecky-zdar-nad-sazavou'
             }
             headers = {'Authorization': config['apikey']}
-            r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
+            r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
             if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
-
+                logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(y))
+                exit(1)
+        print(data['result']['id'])
+    '''
     if args.import_new:
         try:
             # TODO: use ckan_post_request() instead
@@ -346,6 +365,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
             if r == EXIT_REQUEST_ERROR:
                 exit(rollback(args.start_year, args.end_year))
+    '''
 
     logging.info('All datas successfully imported.')
 
