@@ -328,7 +328,7 @@ for year in range(args.start_year, args.end_year+1):
         pass
 
 # Write to file ids of updated packages, it will be passed to paster to update DataStore
-with open('ids.txt','w') as f:
+with open('../ids.txt','a') as f:
     for id in package_updated_id:
         f.write(id + '\n')
 
