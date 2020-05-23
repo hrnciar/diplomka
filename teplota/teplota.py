@@ -68,25 +68,14 @@ def prepare_data(list_of_rows):
     """
         Prepares data for publishing and neccessary data to conform Open Normal Form of datas.
     """
-    """
-    TODO: prepare date based on header
 
+    prepared_data = []
     index = 0
     for row in list_of_rows:
-        row[0] = row[0].split(' ')
-        del row[0][2] # Removed dash " - " separator from time
-        date = datetime.strptime(row[0][0], '%d.%m.%Y').strftime('%Y-%m-%d')
-
-        # YYYY-MM-DDTHH:MM:SS 'T' connects date and time (see: https://bit.ly/2y0iDP7)
-        row[0][1] = date + 'T' + row[0][1] + ':00'
-        row[0][2] = date + 'T' + row[0][2] + ':00'
-        del row[0][0]
-        consumption = row[1].split(' ')
-        iri = config['resource_iri'] + config['station_dict'][station] + '/' + config['socket_dict'][socket]
-        list_of_rows[index] = [iri] + row[0] + [consumption[0]] + [consumption[1]]
-        index += 1
-    """
-    return list_of_rows
+        prepared_data.append([row[0], config['senzor1-name'], row[1], '°C', config['senzor1-long'], config['senzor1-lat']])
+        if row[2]:
+            prepared_data.append([row[0], config['senzor2-name'], row[2], '°C', config['senzor2-long'], config['senzor2-lat']])
+    return prepared_data
 
 def month_year_iter(start_month, start_year, end_month, end_year):
     ym_start = 12*start_year + start_month - 1
@@ -222,6 +211,7 @@ for year in range(args.start_year, args.end_year+1):
     except:
         logging.info('Nothing to backup')
 
+package_updated_id = set([])
 for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
     filename = config['filename'] + str(y) + config['extension'] # backup/teplota_xxxx.csv
 
@@ -265,6 +255,7 @@ for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_mo
         r = ckan_post_request(config['url_api'], 'package_show', data, headers, None
 )
         data = r.json()
+
     except:
         logging.info('Dataset %s does not exists', config['package'] + str(y))
 
@@ -287,6 +278,7 @@ for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_mo
             exit(1)
     # we have id of package that will be updated
     package_id = data['result']['id']
+    package_updated_id.add(package_id)
 
     resource_id = ''
     for resource in data['result']['resources']:
@@ -323,7 +315,6 @@ for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_mo
             exit(rollback(args.start_year, args.end_year))
 
     ckan_post_request(config['url_api'], 'datapusher_submit', {'resource_id': resource_id}, {'Authorization': config['apikey']}, None)
-    
     logging.info('All datas successfully imported.')
 
 for year in range(args.start_year, args.end_year+1):
@@ -335,3 +326,9 @@ for year in range(args.start_year, args.end_year+1):
         logging.info('Removing old backups %s', filename)
     except:
         pass
+
+# Write to file ids of updated packages, it will be passed to paster to update DataStore
+with open('ids.txt','w') as f:
+    for id in package_updated_id:
+        f.write(id + '\n')
+
