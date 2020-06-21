@@ -1,0 +1,1782 @@
+<schuze>
+	<datum>2.11.2018</datum>
+	<nazev>Ustavuj&#237;c&#237; zased&#225;n&#237; zastupitelstva m&#283;sta</nazev>
+
+	<bod>
+		<bod_id>335</bod_id>
+  		<cj />
+  		<cislo>1.</cislo>
+  		<nazev>Ur&#269;en&#237; ov&#283;&#345;ovatel&#367; z&#225;pisu</nazev>
+
+  		<usneseni>
+  			<id>574</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta ur&#269;uje ov&#283;&#345;ovali z&#225;pisu z ustavuj&#237;c&#237;ho zased&#225;n&#237;:
+Ing. Dagmar Zv&#283;&#345;inovou a Ing. Radka Zles&#225;ka.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>336</bod_id>
+  		<cj />
+  		<cislo>2.</cislo>
+  		<nazev>Ur&#269;en&#237; n&#225;vrhov&#233; komise</nazev>
+
+  		<usneseni>
+  			<id>575</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta ur&#269;uje n&#225;vrhovou komisi ve slo&#382;en&#237;:
+PhDr. Zden&#283;k Kulh&#225;nek a Ing. Vladim&#237;r Novotn&#253;</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>337</bod_id>
+  		<cj />
+  		<cislo>3.</cislo>
+  		<nazev>Volba &#269;len&#367; volebn&#237; komise, ve&#345;ejn&#233; hlasov&#225;n&#237;, volba p&#345;edsedy volebn&#237; komise</nazev>
+
+  		<usneseni>
+  			<id>576</id>
+  			<cislo>1</cislo>
+  			<text>Zastupitelstvo m&#283;sta se usn&#225;&#353;&#237;, &#382;e volba volebn&#237; komise bude prob&#237;hat ve&#345;ejn&#253;m hlasov&#225;n&#237;m.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+  		<usneseni>
+  			<id>577</id>
+  			<cislo>2</cislo>
+  			<text>Zastupitelstvo m&#283;sta vol&#237; volebn&#237; komisi ve slo&#382;en&#237;:
+Mgr. Tom&#225;&#353; August&#253;n, Ph. D.
+Mgr. Zden&#283;k Navr&#225;til
+PaedDr. Jaroslav Pt&#225;&#269;ek
+Mgr. Karel Herold
+Mgr. Zbyn&#283;k Vintr
+Ing. Radek Zles&#225;k
+Bohumil Tr&#225;vn&#237;k
+Mgr. Lubo&#353; Straka</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>338</bod_id>
+  		<cj />
+  		<cislo>4.</cislo>
+  		<nazev>Stanoven&#237; po&#269;tu &#269;len&#367; rady m&#283;sta</nazev>
+
+  		<usneseni>
+  			<id>578</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta stanov&#237; v souladu s &#167; 84 odst. 2 p&#237;sm. m) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367; po&#269;et &#269;len&#367; rady m&#283;sta na 9.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>339</bod_id>
+  		<cj />
+  		<cislo>5.</cislo>
+  		<nazev>Stanoven&#237; po&#269;tu m&#237;stostarost&#367;</nazev>
+
+  		<usneseni>
+  			<id>579</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta stanov&#237; v souladu s &#167; 84 odst. 2 p&#237;sm. m) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, po&#269;et m&#237;stostarost&#367; na 2.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>340</bod_id>
+  		<cj />
+  		<cislo>6.</cislo>
+  		<nazev>Ur&#269;en&#237;, kter&#233; funkce budou &#269;lenov&#233; zastupitelstva vykon&#225;vat jako dlouhodob&#283; uvoln&#283;n&#237;</nazev>
+
+  		<usneseni>
+  			<id>580</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta ur&#269;uje v souladu s &#167; 84 odst. 2 p&#237;sm. k) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, &#382;e pro v&#253;kon funkce starosty a 2 m&#237;stostarost&#367; budou &#269;lenov&#233; zastupitelstva m&#283;sta dlouhodob&#283; uvoln&#283;ni.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>341</bod_id>
+  		<cj />
+  		<cislo>7.</cislo>
+  		<nazev>Volba starosty</nazev>
+
+  		<usneseni>
+  			<id>581</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta vol&#237; v souladu s &#167; 84, odst. 2 p&#237;sm. m) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, starostou m&#283;sta &#381;&#271;&#225;ru nad S&#225;zavou po&#269;tem 17 hlas&#367; pana Ing. Martina Mrkose, ACCA.</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>342</bod_id>
+  		<cj />
+  		<cislo>8.</cislo>
+  		<nazev>Volba m&#237;stostarost&#367;</nazev>
+
+  		<usneseni>
+  			<id>582</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta vol&#237; v souladu s &#167; 84 odst. 2 p&#237;sm. m) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, m&#237;stostarostou m&#283;sta &#381;&#271;&#225;ru nad S&#225;zavou:
+
+Pan&#237; Mgr. Ludmilu &#344;ezn&#237;&#269;kovou po&#269;tem 16 hlas&#367;
+Pana Ing. Josefa Klementa po&#269;tem 19 hlas&#367;</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>343</bod_id>
+  		<cj />
+  		<cislo>9.</cislo>
+  		<nazev>Ur&#269;en&#237; po&#345;ad&#237; m&#237;stostarost&#367; k zastupov&#225;n&#237; starosty v dob&#283; jeho nep&#345;&#237;tomnosti nebo v dob&#283;, kdy starosta nevykon&#225;v&#225; funkci</nazev>
+
+  		<usneseni>
+  			<id>583</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta ur&#269;uje v souladu s &#167; 104 z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, po&#345;ad&#237; m&#237;stostarost&#367; k zastupov&#225;n&#237; starosty v dob&#283; jeho nep&#345;&#237;tomnosti nebo v dob&#283;, kdy starosta nevykon&#225;v&#225; funkci a ke spolupodepisov&#225;n&#237; pr&#225;vn&#237;ch p&#345;edpis&#367; takto:
+
+Pan Ing. Josef Klement
+Pan&#237; Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>344</bod_id>
+  		<cj />
+  		<cislo>10.</cislo>
+  		<nazev>Pov&#283;&#345;en&#237; starosty a m&#237;stostarost&#367; m&#283;sta &#381;&#271;&#225;r nad S&#225;zavou n&#283;kter&#253;mi &#250;koly</nazev>
+
+  		<usneseni>
+  			<id>584</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta sv&#283;&#345;uje starostovi a m&#237;stostarost&#367;m n&#283;kter&#233; &#250;koly, a to n&#225;sledovn&#283;:
+
+Starostovi pln&#283;n&#237; &#250;kol&#367; v samostatn&#233; p&#367;sobnosti, garanci a koordinaci &#269;innost&#237; v oblastech:
+
+projektov&#233;ho, dota&#269;n&#237;ho a grantov&#233;ho financov&#225;n&#237; v&#269;etn&#283; fond&#367; EU
+finan&#269;n&#237; kontroly a intern&#237;ho auditu
+m&#283;stsk&#233; policie
+spr&#225;vy majetku m&#283;sta
+strategick&#233;ho rozvoje m&#283;sta a &#250;zemn&#237;ho pl&#225;nov&#225;n&#237;, v&#269;etn&#283; agendy cestovn&#237;ho ruchu a agendy Smart City
+organiza&#269;n&#237; slo&#382;ky Technick&#225; spr&#225;va budov
+organiza&#269;n&#237; slo&#382;ky Region&#225;ln&#237; muzeum
+zaji&#353;&#357;ov&#225;n&#237;m &#250;kol&#367; v krizov&#233;m &#345;&#237;zen&#237;, bezpe&#269;nostn&#237; rad&#283; obce, povod&#328;ov&#233; komisi a po&#382;&#225;rn&#237; ochrany a jin&#233; pot&#345;ebn&#233; pomoci komis&#237;m rady m&#283;sta
+sportu
+p&#345;&#237;sp&#283;vkov&#233; organizace Poliklinika &#381;&#271;&#225;r nad S&#225;zavou
+p&#345;&#237;sp&#283;vkov&#233; organizace SPORTIS, p&#345;&#237;sp&#283;vkov&#225; organizace
+M&#237;stostarostce Mgr. Ludmile &#344;ezn&#237;&#269;kov&#233; pln&#283;n&#237; &#250;kol&#367; v samostatn&#233; p&#367;sobnosti, garanci a koordinaci &#269;innost&#237; v oblastech:
+
+region&#225;ln&#237; a mezin&#225;rodn&#237; spolupr&#225;ce
+komun&#225;ln&#237;ch slu&#382;eb
+&#382;ivotn&#237;ho prost&#345;ed&#237;
+kultury
+zabezpe&#269;en&#237; organiza&#269;n&#237;, metodick&#233; a jin&#233; pot&#345;ebn&#233; pomoci kontroln&#237;mu v&#253;boru ZM
+zabezpe&#269;en&#237; organiza&#269;n&#237;, metodick&#233; a jin&#233; pot&#345;ebn&#233; pomoci osadn&#237;m v&#253;bor&#367;m
+p&#345;&#237;sp&#283;vkov&#233; organizace Knihovna Mat&#283;je Josefa Sychry, &#381;&#271;&#225;r nad S&#225;zavou
+p&#345;&#237;sp&#283;vkov&#233; organizace Kultura &#381;&#271;&#225;r, p&#345;&#237;sp&#283;vkov&#225; organizace
+p&#345;&#237;sp&#283;vkov&#233; organizace Z&#225;kladn&#237; um&#283;leck&#225; &#353;kola Franti&#353;ka Drdly, &#381;&#271;&#225;r nad S&#225;zavou, Dole&#382;alovo n&#225;m&#283;st&#237; 4, p&#345;&#237;sp&#283;vkov&#225; organizace
+M&#237;stostarostovi Ing. Josefu Klementovi pln&#283;n&#237; &#250;kol&#367; v samostatn&#233; p&#367;sobnosti, garanci a koordinaci &#269;innost&#237; v oblastech:
+
+rozpo&#269;tu a finan&#269;n&#237;ho &#345;&#237;zen&#237;
+zabezpe&#269;en&#237; organiza&#269;n&#237;, metodick&#233; a jin&#233; pot&#345;ebn&#233; pomoci finan&#269;n&#237;mu v&#253;boru ZM
+oblasti soci&#225;ln&#237;
+oblasti &#353;kolstv&#237;
+spolupr&#225;ce s nest&#225;tn&#237;mi neziskov&#253;mi organizacemi
+p&#345;&#237;sp&#283;vkov&#233; organizace Soci&#225;ln&#237; slu&#382;by m&#283;sta &#381;&#271;&#225;ru nad S&#225;zavou
+p&#345;&#237;sp&#283;vkov&#233; organizace Z&#225;kladn&#237; &#353;kola &#381;&#271;&#225;r nad S&#225;zavou, Komensk&#233;ho 2
+p&#345;&#237;sp&#283;vkov&#233; organizace Z&#225;kladn&#237; &#353;kola &#381;&#271;&#225;r nad S&#225;zavou, Komensk&#233;ho 6
+p&#345;&#237;sp&#283;vkov&#233; organizace Z&#225;kladn&#237; &#353;kola &#381;&#271;&#225;r nad S&#225;zavou, &#352;vermova 4
+p&#345;&#237;sp&#283;vkov&#233; organizace Z&#225;kladn&#237; &#353;kola &#381;&#271;&#225;r nad S&#225;zavou, Palachova 2189/35
+p&#345;&#237;sp&#283;vkov&#233; organizace Mate&#345;sk&#225; &#353;kola &#381;&#271;&#225;r nad S&#225;zavou, p&#345;&#237;sp&#283;vkov&#225; organizace</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>345</bod_id>
+  		<cj />
+  		<cislo>11.</cislo>
+  		<nazev>Volba dal&#353;&#237;ch &#269;len&#367; rady m&#283;sta</nazev>
+
+  		<usneseni>
+  			<id>585</id>
+  			<cislo>1</cislo>
+  			<text>Zastupitelstvo m&#283;sta se usn&#225;&#353;&#237;, &#382;e bude o &#269;lenech rady m&#283;sta hlasovat ve&#345;ejnou volbou.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+  		<usneseni>
+  			<id>586</id>
+  			<cislo>2</cislo>
+  			<text>Zastupitelstvo m&#283;sta vol&#237; v souladu s &#167; 84 odst. 2 p&#237;sm. m) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, neuvoln&#283;n&#253;m &#269;lenem rady m&#283;sta:
+Pan&#237; MUDr. Romanu B&#283;lohl&#225;vkovou
+Pana PhDr. Zde&#328;ka Kulh&#225;nka
+Pana  MUDr. Jana Mok&#345;&#237;&#353;e
+Pana Mgr. Zde&#328;ka Navr&#225;tila
+Pana PaedDr. Jaroslava Pt&#225;&#269;ka
+Pana Ing. Radka Zles&#225;ka</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>346</bod_id>
+  		<cj />
+  		<cislo>12.</cislo>
+  		<nazev>Z&#345;&#237;zen&#237; v&#253;bor&#367; zastupitelstva m&#283;sta (Finan&#269;n&#237;, Kontroln&#237;)</nazev>
+
+  		<usneseni>
+  			<id>587</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta v souladu s &#167; 84 odst. 2 p&#237;sm. l) z&#225;kona &#269;. 128/2000 Sb. o obc&#237;ch ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, z&#345;izuje finan&#269;n&#237; a kontroln&#237; v&#253;bor a ur&#269;uje, &#382;e v&#253;bory finan&#269;n&#237; a kontroln&#237; budou dev&#237;ti&#269;lenn&#233;.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen />
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>347</bod_id>
+  		<cj />
+  		<cislo>13.</cislo>
+  		<nazev>Volba p&#345;edsedy finan&#269;n&#237;ho v&#253;boru</nazev>
+
+  		<usneseni>
+  			<id>588</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta vol&#237; p&#345;edsedou finan&#269;n&#237;ho v&#253;boru pana Mgr. Lubo&#353;e Straku po&#269;tem hlas&#367; 26.</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>348</bod_id>
+  		<cj />
+  		<cislo>14.</cislo>
+  		<nazev>Volba &#269;len&#367; finan&#269;n&#237;ho v&#253;boru</nazev>
+
+  		<usneseni>
+  			<id>589</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta vol&#237; &#269;leny finan&#269;n&#237;ho v&#253;boru:
+
+Pana Radima Technika po&#269;tem 27 hlas&#367;
+Pan&#237; Renatu Sm&#237;&#353;kovou po&#269;tem 26 hlas&#367;
+Pana Miroslava Stehno po&#269;tem 26 hlas&#367;
+Pana Ing. Martina Petra po&#269;tem 26 hlas&#367;
+Pana Mgr. Tom&#225;&#353;e August&#253;na po&#269;tem 27 hlas&#367;
+Pana Ing. Tom&#225;&#353;e Havl&#237;ka po&#269;tem 18 hlas&#367;
+Pana Rostislava Dvo&#345;&#225;ka po&#269;tem 17 hlas&#367;
+Pana Bohumila Tr&#225;vn&#237;ka po&#269;tem 27 hlas&#367;</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>349</bod_id>
+  		<cj />
+  		<cislo>15.</cislo>
+  		<nazev>Volba p&#345;edsedy kontroln&#237;ho v&#253;boru</nazev>
+
+  		<usneseni>
+  			<id>590</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta vol&#237; p&#345;edsedou kontroln&#237;ho v&#253;boru Ing. Vladim&#237;ra Novotn&#233;ho po&#269;tem 24 hlas&#367;.</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>350</bod_id>
+  		<cj />
+  		<cislo>16.</cislo>
+  		<nazev>Volba &#269;len&#367; kontroln&#237;ho v&#253;boru</nazev>
+
+  		<usneseni>
+  			<id>591</id>
+  			<cislo>1</cislo>
+  			<text>Zastupitelstvo m&#283;sta vol&#237; &#269;leny kontroln&#237;ho v&#253;boru:
+
+Pan&#237; Ing. Irenu Pechovou po&#269;tem 17 hlas&#367;
+Pana Ing. Jaroslava Kova&#269;ku po&#269;tem 17 hlas&#367;
+Pana Ji&#345;&#237;ho Bidmona po&#269;tem 23 hlas&#367;
+Pana V&#237;ta Filipensk&#233;ho po&#269;tem 20 hlas&#367;
+Pana Ing. Miroslava Kellera po&#269;tem 26 hlas&#367;
+Pana Ing. Petra Sto&#269;ka po&#269;tem 26 hlas&#367;
+Pana JUDr. Milo&#353;e Jirmana po&#269;tem 26 hlas&#367;
+Pan&#237; Ing. Zuzanu &#352;&#225;novou po&#269;tem 15 hlas&#367;
+Pana Michala Huberta Zr&#367;sta, MSc., MBA po&#269;tem 20 hlas&#367;
+
+Zastupitelstvo m&#283;sta &#269;&#225;ste&#269;n&#283; revokuje usnesen&#237;, &#382;e v souladu s &#167; 84 odst. 2 p&#237;sm. l) z&#225;kona &#269;. 128/2000 Sb., o obc&#237;ch ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, z&#345;izuje finan&#269;n&#237; a kontroln&#237; v&#253;bor a ur&#269;uje, &#382;e v&#253;bory finan&#269;n&#237; a kontroln&#237; budou dev&#237;ti&#269;lenn&#233; s t&#237;m, &#382;e nov&#283; ur&#269;uje po&#269;et &#269;len&#367; finan&#269;n&#237;ho v&#253;boru na 9 &#269;len&#367; a po&#269;et &#269;len&#367; kontroln&#237;ho v&#253;boru na 11 &#269;len&#367;.</text>
+
+ 	 	</usneseni>
+
+  		<usneseni>
+  			<id>593</id>
+  			<cislo>2</cislo>
+  			<text>Zastupitelstvo m&#283;sta &#269;&#225;ste&#269;n&#283; revokuje usnesen&#237;, &#382;e v souladu s &#167; 84 odst. 2 p&#237;sm. l) z&#225;kona &#269;. 128/2000 Sb., o obc&#237;ch ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367;, z&#345;izuje finan&#269;n&#237; a kontroln&#237; v&#253;bor a ur&#269;uje, &#382;e v&#253;bory finan&#269;n&#237; a kontroln&#237; budou dev&#237;ti&#269;lenn&#233; s t&#237;m, &#382;e nov&#283; ur&#269;uje po&#269;et &#269;len&#367; finan&#269;n&#237;ho v&#253;boru na 9 &#269;len&#367; a po&#269;et &#269;len&#367; kontroln&#237;ho v&#253;boru na 11 &#269;len&#367;.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen />
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+  		<usneseni>
+  			<id>592</id>
+  			<cislo>3</cislo>
+  			<text>Zastupitelstvo m&#283;sta vol&#237; &#269;lenem kontroln&#237;ho v&#253;boru pana Miroslava Stehno ml. po&#269;tem 16 hlas&#367;.</text>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>351</bod_id>
+  		<cj />
+  		<cislo>17.</cislo>
+  		<nazev>Rozhodnut&#237; o odm&#283;n&#225;ch za v&#253;kon funkc&#237; neuvoln&#283;n&#253;ch &#269;len&#367; zastupitelstva m&#283;sta</nazev>
+
+  		<usneseni>
+  			<id>594</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta stanov&#237; v souladu s &#167; 72, &#167; 77 odst. 3 p&#237;sm. a) a &#167; 84 odst. 2 p&#237;sm. n) z&#225;kona &#269;. 128/2000 Sb., o obc&#237;ch, ve zn&#283;n&#237; pozd&#283;j&#353;&#237;ch p&#345;edpis&#367; a na&#345;&#237;zen&#237; vl&#225;dy &#269;. 318/2017 Sb. o v&#253;&#353;i odm&#283;n &#269;len&#367; zastupitelstev &#250;zemn&#237;ch samospr&#225;vn&#237;ch celk&#367; a jeho p&#345;&#237;lohou &#269;. 1, odm&#283;nu za v&#253;kon funkce neuvoln&#283;n&#233;ho &#269;lena zastupitelstva m&#283;sta m&#283;s&#237;&#269;n&#283; ve v&#253;&#353;i:
+
+&#269;len rady m&#283;sta 5.579,- K&#269;
+p&#345;edseda v&#253;boru 3.286,- K&#269;
+p&#345;edseda komise 3.286,- K&#269;
+&#269;len v&#253;boru 2.733,- K&#269;
+&#269;len komise 2.733,- K&#269;
+&#269;len zastupitelstva m&#283;sta 1.374,- K&#269;
+
+p&#345;i&#269;em&#382; odm&#283;na bude vypl&#225;cena jen za nejvy&#353;&#353;&#237; vykon&#225;vanou funkci. Odm&#283;na bude poskytov&#225;na ode dne 2.11.2018 a v p&#345;&#237;pad&#283; n&#225;hradn&#237;ka ode dne prvn&#237;ho zased&#225;n&#237; zastupitelstva, jeho&#382; se z&#250;&#269;astnil.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen>Mgr. Karel Herold</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+	<bod>
+		<bod_id>352</bod_id>
+  		<cj />
+  		<cislo>18.</cislo>
+  		<nazev>R&#367;zn&#233;</nazev>
+
+  		<usneseni>
+  			<id>595</id>
+  			<cislo />
+  			<text>Zastupitelstvo m&#283;sta sv&#283;&#345;uje m&#237;stostarostce pan&#237; Mgr. Ludmile &#344;ezn&#237;&#269;kov&#233; garanci a koordinaci &#269;innosti p&#345;&#237;sp&#283;vkov&#233; organizace Active &#8211; SV&#268;, p&#345;&#237;sp&#283;vkov&#225; organizace.</text>
+
+  			<hlasovani>
+  			
+		  		<pro>
+
+					<clen>Mgr. Tom&#225;&#353; August&#253;n</clen>
+
+					<clen>MUDr. Romana B&#283;lohl&#225;vkov&#225;</clen>
+
+					<clen>MUDr. Be&#225;ta B&#237;lkov&#225;</clen>
+
+					<clen>Mgr. Jarom&#237;r Brychta</clen>
+
+					<clen>PaedDr. Miloslava Brychtov&#225;</clen>
+
+					<clen>MUDr. Radek &#268;ern&#253;</clen>
+
+					<clen>Rostislav Dvo&#345;&#225;k</clen>
+
+					<clen>Ing. Vlastimil Forst</clen>
+
+					<clen>Ing. Jan Havl&#237;k</clen>
+
+					<clen>MPA</clen>
+
+					<clen>Ing. Josef Klement</clen>
+
+					<clen>Ing. Karol&#237;na Klus&#225;&#269;kov&#225;</clen>
+
+					<clen>PhDr. Zden&#283;k Kulh&#225;nek</clen>
+
+					<clen>Ing. Martin Mrkos</clen>
+
+					<clen>ACCA</clen>
+
+					<clen>Mgr. Zden&#283;k Navr&#225;til</clen>
+
+					<clen>Ing. Vladim&#237;r Novotn&#253;</clen>
+
+					<clen>PaedDr. Jaroslav Pt&#225;&#269;ek</clen>
+
+					<clen>Mgr. Ludmila &#344;ezn&#237;&#269;kov&#225;</clen>
+
+					<clen>Ing. Petr Sto&#269;ek</clen>
+
+					<clen>Ing. Miroslav &#352;uhaj</clen>
+
+					<clen>Bohumil Tr&#225;vn&#237;k</clen>
+
+					<clen>Mgr. Zbyn&#283;k Vintr</clen>
+
+					<clen>Ing. Radek Zles&#225;k</clen>
+
+					<clen>Michal Hubert Zr&#367;st MSc.</clen>
+
+					<clen>MBA</clen>
+
+					<clen>Ing. Dagmar Zv&#283;&#345;inov&#225;</clen>
+
+		  		</pro>
+		  		<proti>
+
+					<clen />
+
+		  		</proti>
+		  		<zdrzel_se>
+
+					<clen />
+
+
+		  		</zdrzel_se>
+		  		<nehlasoval>
+
+					<clen>Mgr. Karel Herold</clen>
+
+
+		  		</nehlasoval>
+		  		<omluven>
+
+					<clen />
+
+		  		</omluven>
+		  		<nepritomen>
+
+					<clen>MUDr. Jan Mok&#345;&#237;&#353;</clen>
+
+					<clen>Mgr. Lubo&#353; Straka</clen>
+
+
+		  		</nepritomen>
+  			</hlasovani>
+
+ 	 	</usneseni>
+
+ 	</bod>
+
+</schuze>
