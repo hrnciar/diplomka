@@ -21,7 +21,7 @@ EXIT_REQUEST_ERROR = 1
 EXIT_ROLLBACK_SUCCESS = 2
 EXIT_ROLLBACK_ERROR = 3
 
-def get_data(id, filename):
+def get_data(id):
     """Scrape data from web"""
     data = {'fIDS': id}
     with requests.Session() as session:
@@ -44,10 +44,12 @@ def get_data(id, filename):
     #soup = BeautifulSoup(raw_table.content, features='lxml')
 
     root = ET.fromstring(request.text)
-
+    #print(ET.tostring(root))
+    date = datetime.strptime(root[0].text, '%d.%m.%Y').strftime('%Y-%m-%d')
     tree = ET.ElementTree(root)
+    filename = config['package'] + str(date) + ".xml"
     tree.write(filename)
-    return request
+    return date, filename
 
 
 def ckan_post_request(url, action, data, headers, filename):
@@ -82,7 +84,7 @@ parser.add_argument('-eid', '--end-id', action='store', type=int, required='True
 
 args = parser.parse_args()
 
-logging.basicConfig(filename='elektronabijecky.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='uredni-deska.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 if ((len(str(args.start_id)) > 4) or (len(str(args.end_id)) > 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
@@ -92,41 +94,45 @@ if args.start_id > args.end_id:
     logging.error('Starting id has to be smaller than ending id. Exiting...')
     exit(1)
 
-print(args.start_id)
-print(args.end_id)
-
 logging.debug('Arguments parsed.')
 
 for id in range(args.start_id, args.end_id + 1):
-    print(id)
-    now = datetime.now()
     logging.info('Processing %s', id)
-    filename = config['package'] + str(now.year) + ".xml"
-    get_data(id, filename)
+    date, filename = get_data(id)
+
+    # Check if package exists
+    try:
+        data={'id': config['package'] + str(date)}
+        headers={'Authorization': config['apikey']}
+        r = ckan_post_request(config['url_api'], 'package_show', data, headers, None)
+        data = r.json()
+    except:
+        logging.info('Dataset %s does not exists', config['package'] + str(date))
 
     # dataset does not exists or is deleted, create one
-    logging.info('Creating dataset %s', config['package'] + str(id))
-    data = {
-        'name': config['package'] + str(now.year),
-        'title': config['package_name'] + str(now.year),
-        'private': False,
-        'url': 'upload',  # Needed to pass validation,
-        'owner_org': 'elektronabijecky-zdar-nad-sazavou' #TODO: config
-    }
-    headers = {'Authorization': config['apikey']}
-    r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
-    data = r.json()
+    if r == EXIT_REQUEST_ERROR or data['result']['state'] == 'deleted':
+        logging.info('Creating dataset %s', config['package'] + str(id))
+        data = {
+            'name': config['package'] + str(date),
+            'title': config['package_name'] + str(date),
+            'private': False,
+            'url': 'upload',  # Needed to pass validation,
+            'owner_org': config['owner_org']
+        }
+        headers = {'Authorization': config['apikey']}
+        r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
+        data = r.json()
 
-    if r == EXIT_REQUEST_ERROR:
-        logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(now.year))
-        exit(1)
+        if r == EXIT_REQUEST_ERROR:
+            logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(date))
+            exit(1)
 
     # we have id of package that will be updated
     package_id = data['result']['id']
 
     resource_id = ''
     for resource in data['result']['resources']:
-        if resource['name'] == config['package_name'] + str(now.year):
+        if resource['name'] == config['package_name'] + str(date):
             resource_id = resource['id']
 
     path = os.path.join(filename)
@@ -136,12 +142,24 @@ for id in range(args.start_id, args.end_id + 1):
         logging.info('Creating "{resource_name}" resource'.format(**locals()))
         data = {
             'package_id': package_id,
-            'name': config['package_name'] + str(now.year),
+            'name': config['package_name'] + str(date),
             'format': extension,
             'url': 'upload',  # Needed to pass validation
         }
         headers = {'Authorization': config['apikey']}
         r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
+
+    else:
+        logging.info('Updating "{resource_name}" resource'.format(**locals()))
+        data = {
+            'id': resource_id,
+            'package_id': package_id,
+            'name': config['package_name'] + str(date),
+            'format': extension,
+            'url': 'upload',  # Needed to pass validation
+        }
+        headers = {'Authorization': config['apikey']}
+        r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
 
 logging.info('All datas successfully imported.')
 
