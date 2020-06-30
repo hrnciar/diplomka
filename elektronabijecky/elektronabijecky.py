@@ -6,12 +6,12 @@ into CKAN
 import os
 import csv
 import argparse
+from shutil import copyfile
 from datetime import datetime
 import logging
 import requests
 from bs4 import BeautifulSoup
 import toml
-from shutil import copyfile
 
 config = toml.load('config.toml')
 
@@ -114,11 +114,6 @@ def month_year_iter(start_month, start_year, end_month, end_year):
         logging.info('Processing %s', current_date)
         counter = 0
         for station in config['station_dict']:
-            # TODO: fix this ugliness
-            # This is wrong design sockets are defined in config and shoudln't be hardcoded here.
-            # I will rework it if there will be some spare time before submission of my thesis,
-            # for now it works. Also there probably won't be any new sockets in config so it's
-            # basically just ugly.
             if station == '319':
                 sockets = ['343', '344']
             else: #station 351
@@ -148,9 +143,9 @@ def ckan_post_request(url, action, data, headers, filename):
         Wrapper around request call to provide neccessary parameters.
     """
     if filename:
-        files=[('upload', open(filename, 'rb'))]
+        files = [('upload', open(filename, 'rb'))]
     else:
-        files=None
+        files = None
     try:
         r = requests.post(url + action,
                           data=data,
@@ -292,8 +287,6 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
 
         # Check if package exists
         try:
-            # TODO: use ckan_post_request() instead
-            # see: https://stackoverflow.com/a/919720
             data={'id': config['package'] + str(y)}
             headers={'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'package_show', data, headers, None)
@@ -309,7 +302,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
                 'title': config['package_name'] + str(y),
                 'private': False,
                 'url': 'upload',  # Needed to pass validation,
-                'owner_org': 'elektronabijecky-zdar-nad-sazavou'
+                'owner_org': config['owner_org']
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)

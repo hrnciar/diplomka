@@ -6,7 +6,7 @@ post_login_url = 'https://www.evmapy.cz/users_login.php'
 request_url = 'https://www.evmapy.cz/muj-ucet?action=stats'
 package = 'vyuziti-elektronabijecek-'
 package_name = 'Využití elektronabíječek v roce '
-
+owner_org = 'elektronabijecky-zdar-nad-sazavou'
 filename = 'elektronabijecky_'
 extension = '.csv'
 
