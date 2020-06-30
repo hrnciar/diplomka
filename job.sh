@@ -42,3 +42,30 @@ done
 
 rm ids.txt
 
+cd /home/ckan/Software/diplomka/uredni-deska
+
+# get ID from file
+ID=$(cat /home/ckan/Software/diplomka/uredni-deska/.ID)
+
+python3 /home/ckan/Software/diplomka/uredni-deska/uredni-deska.py -sid $ID -eid $ID
+
+#check if there is something to upload
+if [ $? -eq 4 ];
+then
+	exit
+else
+	# new dataset detected, bump ID and store it to file for next check
+	echo $(($ID+1)) > /home/ckan/Software/diplomka/uredni-deska/.ID
+
+	# try to update again with bumped ID, incase of two City Council's sessions in one month
+	python3 /home/ckan/Software/diplomka/uredni-deska/uredni-deska.py -sid $(($ID+1)) -eid $(($ID+1))
+
+	#check if there is something to upload
+	if [ $? -eq 4 ];
+	then
+		exit
+	else
+		# new dataset detected, bump ID and store it to file for next check
+		echo $(($ID+2)) > /home/ckan/Software/diplomka/uredni-deska/.ID
+	fi
+fi

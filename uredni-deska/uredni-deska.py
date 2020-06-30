@@ -16,6 +16,7 @@ config = toml.load('config.toml')
 EXIT_REQUEST_ERROR = 1
 EXIT_ROLLBACK_SUCCESS = 2
 EXIT_ROLLBACK_ERROR = 3
+EXIT_NOTHING_TO_UPLOAD = 4
 
 def get_data(id):
     """Scrape data from web"""
@@ -39,7 +40,12 @@ def get_data(id):
     request.encoding = request.apparent_encoding
     #soup = BeautifulSoup(raw_table.content, features='lxml')
 
-    root = ET.fromstring(request.text)
+    try:
+        root = ET.fromstring(request.text)
+    except ET.ParseError:
+        logging.info('There is no dataset with given ID yet. Nothing to upload. Exiting...')
+        exit(EXIT_NOTHING_TO_UPLOAD)
+
     #print(ET.tostring(root))
     date = datetime.strptime(root[0].text, '%d.%m.%Y').strftime('%Y-%m-%d')
     tree = ET.ElementTree(root)
