@@ -4,16 +4,12 @@ This script is used for automatic publication of Evmapy datas
 into CKAN
 """
 import os
-import csv
 import argparse
 from datetime import datetime
 import logging
-import requests
-from bs4 import BeautifulSoup
-import toml
-from shutil import copyfile
-
 import xml.etree.ElementTree as ET
+import requests
+import toml
 
 config = toml.load('config.toml')
 
