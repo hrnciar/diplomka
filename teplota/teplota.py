@@ -267,7 +267,7 @@ for data, y, m in month_year_iter(args.start_month, args.start_year, args.end_mo
             'title': config['package_name'] + str(y),
             'private': False,
             'url': 'upload',  # Needed to pass validation,
-            'owner_org': 'mestsky-urad'
+            'owner_org': config['owner_org']
         }
         headers = {'Authorization': config['apikey']}
         r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)

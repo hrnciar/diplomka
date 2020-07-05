@@ -7,6 +7,7 @@ request_url = 'https://data.zdarns.cz/temp.asp?P=XXX&F=T'
 resource_iri = 'https://data.zdarns.cz/zdroj/'
 package = 'historie-teploty-'
 package_name = 'Historie teploty v roce '
+owner_org = 'mestsky-urad'
 
 filename = 'backup/teploty_'
 extension = '.csv'
