@@ -274,8 +274,6 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             #print(' '.join(data))
         outfile.close()
 
-    #logging.info('Importing old datas')
-
     if y != args.end_year:
         months_in_year = 12
     else:
