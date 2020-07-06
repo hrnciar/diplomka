@@ -10,7 +10,7 @@ owner_org = 'elektronabijecky-zdar-nad-sazavou'
 filename = 'elektronabijecky_'
 extension = '.csv'
 
-table_head = ['nabíjecí_stanice', 'nabíjení_interval_začátek_datum_a_čas', 'nabíjení_interval_konec_datum_a_čas', 'spotřeba_hodnota', 'spotřeba_jednotka']
+table_head = ['nabijeci_stanice', 'nabijeni_interval_zacatek_datum_a_cas', 'nabijeni_interval_konec_datum_a_cas', 'spotreba_hodnota', 'spotreba_jednotka']
 
 resource_iri = 'https://data.zdarns.cz/zdroj/'
 

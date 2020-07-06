@@ -1,4 +1,4 @@
-nabíjecí_stanice,nabíjení_interval_začátek_datum_a_čas,nabíjení_interval_konec_datum_a_čas,spotřeba_hodnota,spotřeba_jednotka
+nabijeci_stanice,nabijeni_interval_zacatek_datum_a_cas,nabijeni_interval_konec_datum_a_cas,spotreba_hodnota,spotreba_jednotka
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2019-01-31T18:27:00,2019-01-31T18:54:00,1.915,KWH
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2019-01-31T18:27:00,2019-01-31T18:27:00,0.000,KWH
 https://data.zdarns.cz/zdroj/centrální-parkoviště/konektor-2-mennekes-22kw,2019-01-31T17:07:00,2019-01-31T18:26:00,8.675,KWH
