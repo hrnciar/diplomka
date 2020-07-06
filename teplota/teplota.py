@@ -71,9 +71,9 @@ def prepare_data(list_of_rows):
     prepared_data = []
     index = 0
     for row in list_of_rows:
-        prepared_data.append([row[0], config['senzor1-name'], row[1], '°C', config['senzor1-long'], config['senzor1-lat']])
+        prepared_data.append([row[0],config['senzor1-iri'], config['senzor1-name'], row[1], '°C', config['senzor1-long'], config['senzor1-lat']])
         if row[2]:
-            prepared_data.append([row[0], config['senzor2-name'], row[2], '°C', config['senzor2-long'], config['senzor2-lat']])
+            prepared_data.append([row[0], config['senzor2-iri'], config['senzor2-name'], row[2], '°C', config['senzor2-long'], config['senzor2-lat']])
     return prepared_data
 
 def month_year_iter(start_month, start_year, end_month, end_year):

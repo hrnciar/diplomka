@@ -15,9 +15,11 @@ extension = '.csv'
 table_head = ['datum a čas měření', 'čidlo', 'teplota', 'jednotka', 'latitude', 'longitude']
 
 senzor1-name =
+senzor1-iri = 'https://data.zdarns.cz/zdroj/tme-p4602'
 senzor1-lat =
 senzor1-long =
 
 senzor2-name =
+senzor2-iri = 'https://data.zdarns.cz/zdroj/tme-p4602'
 senzor2-lat =
 senzor2-long =
