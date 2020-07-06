@@ -17,6 +17,8 @@ EXIT_REQUEST_ERROR = 1
 EXIT_ROLLBACK_SUCCESS = 2
 EXIT_ROLLBACK_ERROR = 3
 EXIT_MISSING_CONFIG = 5
+EXIT_ARGUMENT_ERROR = 6
+EXIT_FILE_ERROR = 7
 
 def get_data(url, period, station, pump):
     """Scrape data from web"""
@@ -223,16 +225,16 @@ except:
 
 if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
-    exit(1)
+    exit(EXIT_ARGUMENT_ERROR)
 
 if ((len(str(args.start_month)) > 2) or (len(str(args.end_month)) > 2) and
     (len(str(args.start_month)) <= 0) or (len(str(args.end_month)) <= 0)):
     logging.error('Given month does not has 2 digits. Exiting...')
-    exit(1)
+    exit(EXIT_ARGUMENT_ERROR)
 
 if args.start_year > args.end_year:
     logging.error('Starting month/year has to be smaller that ending month/year. Exiting...')
-    exit(1)
+    exit(EXIT_ARGUMENT_ERROR)
 
 logging.debug('Arguments parsed.')
 if args.head:
@@ -265,7 +267,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
         outfile = open(filename, append_write, newline='\n', encoding='utf-8')
     except IOError:
         logging.error('Could not open file for writing. Exiting...')
-        exit(1)
+        exit(EXIT_FILE_ERROR)
     logging.debug('File opened')
     writer = csv.writer(outfile)
 
@@ -313,7 +315,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
 
             if r == EXIT_REQUEST_ERROR:
                 logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(y))
-                exit(1)
+                exit(EXIT_REQUEST_ERROR)
         # we have id of package that will be updated
         package_id = data['result']['id']
 
