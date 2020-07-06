@@ -192,7 +192,7 @@ if ((len(str(args.start_month)) > 2) or (len(str(args.end_month)) > 2) and
     logging.error('Given month does not has 2 digits. Exiting...')
     exit(EXIT_ARGUMENT_ERROR)
 
-if ((args.start_month <= 2005) or (args.start_month <= 2006 and args.start_month < 7)):
+if ((args.start_year <= 2005) or ((args.start_year <= 2006 and args.start_month < 7))):
     logging.error('There are no data to be processed before 2006/7. Exiting...')
     exit(EXIT_ARGUMENT_ERROR)
 
