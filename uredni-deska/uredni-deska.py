@@ -11,12 +11,11 @@ import xml.etree.ElementTree as ET
 import requests
 import toml
 
-config = toml.load('config.toml')
-
 EXIT_REQUEST_ERROR = 1
 EXIT_ROLLBACK_SUCCESS = 2
 EXIT_ROLLBACK_ERROR = 3
 EXIT_NOTHING_TO_UPLOAD = 4
+EXIT_MISSING_CONFIG = 5
 
 def get_data(id):
     """Scrape data from web"""
@@ -87,6 +86,12 @@ parser.add_argument('-eid', '--end-id', action='store', type=int, required='True
 args = parser.parse_args()
 
 logging.basicConfig(filename='uredni-deska.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+try:
+    config = toml.load('config.toml')
+except:
+    logging.error("Config file is missing. Exiting...")
+    exit(EXIT_MISSING_CONFIG)
 
 if ((len(str(args.start_id)) > 4) or (len(str(args.end_id)) > 4)):
     logging.error('Given year does not has 4 digits. Exiting...')

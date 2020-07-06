@@ -13,11 +13,10 @@ import requests
 from bs4 import BeautifulSoup
 import toml
 
-config = toml.load('config.toml')
-
 EXIT_REQUEST_ERROR = 1
 EXIT_ROLLBACK_SUCCESS = 2
 EXIT_ROLLBACK_ERROR = 3
+EXIT_MISSING_CONFIG = 5
 
 def get_data(url, period, station, pump):
     """Scrape data from web"""
@@ -215,6 +214,12 @@ group_head.add_argument('--no-head', action='store_true', help='do not include h
 args = parser.parse_args()
 
 logging.basicConfig(filename='elektronabijecky.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+try:
+    config = toml.load('config.toml')
+except:
+    logging.error("Config file is missing. Exiting...")
+    exit(EXIT_MISSING_CONFIG)
 
 if ((len(str(args.start_year)) != 4) or (len(str(args.end_year)) != 4)):
     logging.error('Given year does not has 4 digits. Exiting...')
