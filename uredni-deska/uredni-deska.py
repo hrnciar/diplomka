@@ -17,7 +17,7 @@ EXIT_ROLLBACK_ERROR = 3
 EXIT_NOTHING_TO_UPLOAD = 4
 EXIT_MISSING_CONFIG = 5
 
-def get_data(id):
+def get_data(path, id):
     """Scrape data from web"""
     data = {'fIDS': id}
     with requests.Session() as session:
@@ -49,7 +49,7 @@ def get_data(id):
     date = datetime.strptime(root[0].text, '%d.%m.%Y').strftime('%Y-%m-%d')
     tree = ET.ElementTree(root)
     filename = config['filename'] + str(date) + ".xml"
-    tree.write(filename)
+    tree.write(path + '/'  + filename)
     return date, filename
 
 
@@ -87,8 +87,12 @@ args = parser.parse_args()
 
 logging.basicConfig(filename='uredni-deska.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+dirname = os.path.realpath(__file__)
+location = dirname.rsplit('/',1)[0]
+filename = location + '/config.toml'
+
 try:
-    config = toml.load('config.toml')
+    config = toml.load(filename)
 except:
     logging.error("Config file is missing. Exiting...")
     exit(EXIT_MISSING_CONFIG)
@@ -105,7 +109,7 @@ logging.debug('Arguments parsed.')
 
 for id in range(args.start_id, args.end_id + 1):
     logging.info('Processing %s', id)
-    date, filename = get_data(id)
+    date, filename = get_data(location, id)
 
     # Check if package exists
     try:
@@ -155,7 +159,7 @@ for id in range(args.start_id, args.end_id + 1):
             'url': 'upload',  # Needed to pass validation
         }
         headers = {'Authorization': config['apikey']}
-        r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
+        r = ckan_post_request(config['url_api'], 'resource_create', data, headers, location + '/' +filename)
 
     else:
         logging.info('Updating "{resource_name}" resource'.format(**locals()))
@@ -167,7 +171,7 @@ for id in range(args.start_id, args.end_id + 1):
             'url': 'upload',  # Needed to pass validation
         }
         headers = {'Authorization': config['apikey']}
-        r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
+        r = ckan_post_request(config['url_api'], 'resource_update', data, headers, location + '/' + filename)
 
 logging.info('All datas successfully imported.')
 
