@@ -1,0 +1,11 @@
+url = "http://sc02.fi.muni.cz/"
+url_api = "http://sc02.fi.muni.cz/api/action/"
+apikey = ''
+request_url = 'http://deska.zdarns.cz/zm/export.asp'
+package = 'hlasovani-mestskeho-zastupitelstvi-'
+package_name = 'Výsledky hlasování městského zastupitelství '
+
+owner_org = 'mestsky-urad'                                                             
+filename = 'backup/hlasovani_'
+extension = '.xml'
+
