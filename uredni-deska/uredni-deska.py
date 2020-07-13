@@ -48,7 +48,7 @@ def get_data(id):
     #print(ET.tostring(root))
     date = datetime.strptime(root[0].text, '%d.%m.%Y').strftime('%Y-%m-%d')
     tree = ET.ElementTree(root)
-    filename = config['package'] + str(date) + ".xml"
+    filename = config['filename'] + str(date) + ".xml"
     tree.write(filename)
     return date, filename
 
@@ -128,11 +128,12 @@ for id in range(args.start_id, args.end_id + 1):
         }
         headers = {'Authorization': config['apikey']}
         r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
-        data = r.json()
 
         if r == EXIT_REQUEST_ERROR:
             logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(date))
             exit(1)
+
+        data = r.json()
 
     # we have id of package that will be updated
     package_id = data['result']['id']

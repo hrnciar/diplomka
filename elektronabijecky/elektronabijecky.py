@@ -155,8 +155,11 @@ def ckan_post_request(url, action, data, headers, filename):
         r.raise_for_status()
     except requests.exceptions.HTTPError as e:
         logging.error(e)
+        logging.error(r.text)
         return EXIT_REQUEST_ERROR
     except requests.exceptions.RequestException as e:
+        logging.error(e)
+        logging.error(r.text)
         return EXIT_REQUEST_ERROR
 
     if action in ['package_show', 'package_create']:
@@ -311,11 +314,13 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             }
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'package_create', data, headers, None)
-            data = r.json()
 
             if r == EXIT_REQUEST_ERROR:
                 logging.error('Couldn\'t create dataset %s, exiting...', config['package'] + str(y))
                 exit(EXIT_REQUEST_ERROR)
+
+            data = r.json()
+
         # we have id of package that will be updated
         package_id = data['result']['id']
 
