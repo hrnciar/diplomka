@@ -1,13 +1,12 @@
 url = "http://sc02.fi.muni.cz/"
 url_api = "http://sc02.fi.muni.cz/api/action/"
 apikey = ''
-ua = 'ckanexample/1.0 (+http://sc02.fi.muni.cz)'
 post_login_url = 'https://www.evmapy.cz/users_login.php'
 request_url = 'https://www.evmapy.cz/muj-ucet?action=stats'
 package = 'vyuziti-elektronabijecek-'
 package_name = 'Využití elektronabíječek v roce '
 owner_org = 'elektronabijecky-zdar-nad-sazavou'
-filename = 'elektronabijecky_'
+filename = 'backup/elektronabijecky_'
 extension = '.csv'
 
 table_head = ['nabijeci_stanice', 'nabijeni_interval_zacatek_datum_a_cas', 'nabijeni_interval_konec_datum_a_cas', 'spotreba_hodnota', 'spotreba_jednotka']

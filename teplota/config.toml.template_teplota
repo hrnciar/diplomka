@@ -1,7 +1,6 @@
 url = "http://sc02.fi.muni.cz/"
 url_api = "http://sc02.fi.muni.cz/api/action/"
 apikey = ''
-ua = 'ckanexample/1.0 (+http://sc02.fi.muni.cz)'
 # P is control string, F is format where T means text(csv) available also X for XML
 request_url = 'https://data.zdarns.cz/temp.asp?P=XXX&F=T'
 resource_iri = 'https://data.zdarns.cz/zdroj/'
@@ -12,7 +11,7 @@ owner_org = 'mestsky-urad'
 filename = 'backup/teploty_'
 extension = '.csv'
 
-table_head = ['datum a čas měření', 'čidlo', 'teplota', 'jednotka', 'latitude', 'longitude']
+table_head = ['datum a čas měření', 'čidlo', 'teplota', 'jednotka', 'zemepisna_sirka', 'zemepisna_delka']
 
 senzor1-name =
 senzor1-iri = 'https://data.zdarns.cz/zdroj/tme-p4602'
