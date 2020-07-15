@@ -167,11 +167,11 @@ def ckan_post_request(url, action, data, headers, filename):
     else:
         return 0
 
-def rollback(start_year, end_year):
+def rollback(location, start_year, end_year):
     rollback_error = False
     for year in range(start_year, end_year+1):
         logging.error('Rollback of year %s in progress', year)
-        filename = config['filename'] + str(year) + config['extension']
+        filename = location + '/'  + config['filename'] + str(year) + config['extension']
 
         try:
             # Remove corrupted files
@@ -220,8 +220,12 @@ args = parser.parse_args()
 
 logging.basicConfig(filename='elektronabijecky.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+dirname = os.path.realpath(__file__)
+location = dirname.rsplit('/',1)[0]
+filename = location + '/config.toml'
+
 try:
-    config = toml.load('config.toml')
+    config = toml.load(filename)
 except:
     logging.error("Config file is missing. Exiting...")
     exit(EXIT_MISSING_CONFIG)
@@ -246,7 +250,7 @@ if args.no_head:
     head_written = True
 
 for year in range(args.start_year, args.end_year+1):
-    filename = config['filename'] + str(year) + config['extension']
+    filename = location + '/' + config['filename'] + str(year) + config['extension']
 
     try:
         # Create backup of file being uploaded
@@ -260,7 +264,7 @@ for year in range(args.start_year, args.end_year+1):
         pass
 
 for data, y, m, counter in month_year_iter(args.start_month, args.start_year, args.end_month, args.end_year):
-    filename = config['filename'] + str(y) + config['extension'] # backup/elektronabijecky_xxxx.csv
+    filename = location + '/' + config['filename'] + str(y) + config['extension'] # backup/elektronabijecky_xxxx.csv
 
     if os.path.exists(filename):
         append_write = 'a' # append if already exists
@@ -344,7 +348,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_create', data, headers, filename)
             if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
+                exit(rollback(location, args.start_year, args.end_year))
         else:
             logging.info('Updating "{resource_name}" resource'.format(**locals()))
             data = {
@@ -357,7 +361,7 @@ for data, y, m, counter in month_year_iter(args.start_month, args.start_year, ar
             headers = {'Authorization': config['apikey']}
             r = ckan_post_request(config['url_api'], 'resource_update', data, headers, filename)
             if r == EXIT_REQUEST_ERROR:
-                exit(rollback(args.start_year, args.end_year))
+                exit(rollback(location, args.start_year, args.end_year))
 
     logging.info('All datas successfully imported.')
 

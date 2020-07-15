@@ -214,7 +214,7 @@ if args.no_head:
     head_written = True
 
 for year in range(args.start_year, args.end_year+1):
-    filename = config['filename'] + str(year) + config['extension']
+    filename = location + '/'  + config['filename'] + str(year) + config['extension']
 
     try:
         # Create backup of file being uploaded
