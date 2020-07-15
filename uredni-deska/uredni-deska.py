@@ -85,11 +85,11 @@ parser.add_argument('-eid', '--end-id', action='store', type=int, required='True
 
 args = parser.parse_args()
 
-logging.basicConfig(filename='uredni-deska.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-
 dirname = os.path.realpath(__file__)
 location = dirname.rsplit('/',1)[0]
 filename = location + '/config.toml'
+
+logging.basicConfig(filename=location + "/uredni-deska.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 try:
     config = toml.load(filename)

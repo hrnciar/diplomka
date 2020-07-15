@@ -178,11 +178,11 @@ group_head.add_argument('--no-head', action='store_true', help='do not include h
 
 args = parser.parse_args()
 
-logging.basicConfig(filename='teplota.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-
 dirname = os.path.realpath(__file__)
 location = dirname.rsplit('/',1)[0]
 filename = location + '/config.toml'
+
+logging.basicConfig(filename=location + "/teplota.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 try:
     config = toml.load(filename)
